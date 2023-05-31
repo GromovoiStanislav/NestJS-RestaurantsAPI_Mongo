@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "60f9111c-8fe0-425a-8b87-63fb34099558",
+		"name": "restaurants_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Tom\",\r\n    \"email\": \"tom@mail.ru\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"tom@mail.ru\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/restaurants?page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"restaurants"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/meals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"meals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meals/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/meals/64770643946b5370837c2609",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"meals",
+						"64770643946b5370837c2609"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meals",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlNDA5ODFiMjU1ZmQ4OTZiMjU1ZCIsImlhdCI6MTY4NTUxMzIzMSwiZXhwIjoxNjg1NTk5NjMxfQ.8yF4qJwoGcaEguRJ1IgZtefTCB5xcxe7IFxuy2eIl-I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pasta\",\r\n    \"description\": \"description\",\r\n    \"price\": 200,\r\n    \"category\": \"Pasta\",\r\n    \"restaurant\": \"6476e82cd3fc64f193cb5215\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/meals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"meals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meals/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlNDA5ODFiMjU1ZmQ4OTZiMjU1ZCIsImlhdCI6MTY4NTUxMzIzMSwiZXhwIjoxNjg1NTk5NjMxfQ.8yF4qJwoGcaEguRJ1IgZtefTCB5xcxe7IFxuy2eIl-I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/meals/64770686946b5370837c2616",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"meals",
+						"64770686946b5370837c2616"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meals/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlNDA5ODFiMjU1ZmQ4OTZiMjU1ZCIsImlhdCI6MTY4NTUxMzIzMSwiZXhwIjoxNjg1NTk5NjMxfQ.8yF4qJwoGcaEguRJ1IgZtefTCB5xcxe7IFxuy2eIl-I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 180\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/meals/647709bc9340261a4a97694e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"meals",
+						"647709bc9340261a4a97694e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meals/restaurant/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/meals/restaurant/6476e82cd3fc64f193cb5215",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"meals",
+						"restaurant",
+						"6476e82cd3fc64f193cb5215"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurants/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/restaurants/6476e82cd3fc64f193cb5215",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"restaurants",
+						"6476e82cd3fc64f193cb5215"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurants",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlNDA5ODFiMjU1ZmQ4OTZiMjU1ZCIsImlhdCI6MTY4NTUxMzIzMSwiZXhwIjoxNjg1NTk5NjMxfQ.8yF4qJwoGcaEguRJ1IgZtefTCB5xcxe7IFxuy2eIl-I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Pizza\",\r\n    \"description\":\"description\",\r\n    \"email\":\"pizza@email.com\",\r\n    \"phoneNo\":101718333333,\r\n    \"address\":\"address pizza\",\r\n    \"category\":\"Fast Food\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/restaurants",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"restaurants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurants/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlNDA5ODFiMjU1ZmQ4OTZiMjU1ZCIsImlhdCI6MTY4NTUxMzIzMSwiZXhwIjoxNjg1NTk5NjMxfQ.8yF4qJwoGcaEguRJ1IgZtefTCB5xcxe7IFxuy2eIl-I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\":\"address versal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/restaurants/6476e7d3d3fc64f193cb5210",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"restaurants",
+						"6476e7d3d3fc64f193cb5210"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurants/upload/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlNDA5ODFiMjU1ZmQ4OTZiMjU1ZCIsImlhdCI6MTY4NTUxMzIzMSwiZXhwIjoxNjg1NTk5NjMxfQ.8yF4qJwoGcaEguRJ1IgZtefTCB5xcxe7IFxuy2eIl-I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/H:/albert.jpg"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/H:/ala_archa_shema.gif"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/restaurants/upload/6476e7d3d3fc64f193cb5210",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"restaurants",
+						"upload",
+						"6476e7d3d3fc64f193cb5210"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "restaurants/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzZlNDA5ODFiMjU1ZmQ4OTZiMjU1ZCIsImlhdCI6MTY4NTUxMzIzMSwiZXhwIjoxNjg1NTk5NjMxfQ.8yF4qJwoGcaEguRJ1IgZtefTCB5xcxe7IFxuy2eIl-I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\":\"address versal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/restaurants/6476e7d3d3fc64f193cb5210",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"restaurants",
+						"6476e7d3d3fc64f193cb5210"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
